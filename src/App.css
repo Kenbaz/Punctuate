@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .smallscreen-grid-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    @keyframes breathing {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.4;
+        }
+    }
+
+    .breathing {
+        animation: breathing 2s infinite;
+    }
+
+    .large-screen {
+        font-size: 22px !important;
+    }
+
+    .large-screen-btn {
+        font-size: 1.25rem !important;
+        width: 170px !important;
+    }
+
+    .large-screen-result-output {
+        font-size: 22px !important;
+    }
+
+}
