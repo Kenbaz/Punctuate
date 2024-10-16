@@ -12,7 +12,7 @@ const PunctuateApp: React.FC = () => {
   const [error, setError] = useState(""); // state to handle errors
   const [text, setText] = useState("");
   const { width } = useDetectWindowSize(); // Destructure width from useDetectWindowSize
-  
+
   const isMobile = width <= 912;
 
   // Handle text submission
@@ -33,7 +33,7 @@ const PunctuateApp: React.FC = () => {
       setResult(processedLines);
       if (isMobile) {
         setText(processedLines.join("\n")); //changes current text to processed text when screen is mobile sized
-      } 
+      }
     } catch (err) {
       setError("Failed to process text");
     } finally {
@@ -51,7 +51,7 @@ const PunctuateApp: React.FC = () => {
           setText={setText}
           loading={loading}
         />
-        {isMobile && <ResultOutput result={result} />} 
+        {isMobile && <ResultOutput result={result} />}
         {error && <p className="text-gray-800">{error}</p>}
       </div>
       <div className="hidden lg:block">
